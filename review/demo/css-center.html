@@ -7,6 +7,54 @@
     <title>css center</title>
 </head>
 <body>
-    
+    <h1 style="text-align:center">行内元素居中 text-align:center</h1>
+    <h1 style="background:#eee;width:500px;height:2em;margin:auto;text-align:center">块级元素居中</h1>
+    <h1>绝对定位居中 position: absolute;left: 50%;top:50%;margin-left: -100px;margin-top: -100px;</h1>
+    <h1>padding 居中</h1>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .flex {
+            display: flex;
+            box-shadow: #ddd 0px 0px 2px;
+            flex-direction: row;
+            text-align: center;
+            height: 700px;
+        }
+
+        .flex-container {
+            /* flex-direction: row-reverse; */
+            flex-wrap: wrap;
+            justify-content: space-between;
+            /* align-items:center; */
+            /* align-content:center; */
+            background: #eee;
+        }
+
+        .flex-item {
+            width: 300px;
+            height: 300px;
+            /* flex-grow: 1; */
+            flex-shrink: 0;
+            flex-basis: 200px;
+            /* align-self: flex-end; */
+        }
+        /*
+        css flex: http://static.vgee.cn/static/index.html
+        flex-flow = flex-direction + flex-wrap
+        */
+    </style>
+    <ul class="flex flex-container">
+        <li class="flex flex-item"><span>this is flex 04this is flex 04this is flex 04this is flex 01</span></li>
+        <li class="flex flex-item"><span>this is flex 02</span></li>
+        <li class="flex flex-item"><span>this is flex 03</span></li>
+        <li class="flex flex-item"><span>this is flex 04</span></li>
+        <li class="flex flex-item"><span>this is flex 04</span></li>
+        <li class="flex flex-item"><span>this is flex 04</span></li>
+        <li class="flex flex-item"><span>this is flex 04</span></li>
+        <li class="flex flex-item"><span>this is flex 04</span></li>
+    </ul>
 </body>
 </html>
