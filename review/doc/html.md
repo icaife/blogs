@@ -30,15 +30,20 @@ HTML5 是定义 HTML 标准的最新的版本。 该术语表示两个不同的�
 
 - 语义 - 提供更准确地描述内容
     - 新增语意标签，`<section>`、`<article>` 、`<nav>`、`<header>`、`<footer>`、`<aside>`等
+    - input: caneldar time email url
     - 好处：利于维护利于SEO
 - 连接 - 提供新的方式与服务器通信
     - WebSocket
-    - 
 - 离线和存储 - 允许网页在本地存储数据并有效地离线运行
+    - localStorate、sessionStorage
 - 多媒体 - 在 Open Web 中，视频和音频被视为一等公民（first-class citizens）
+    - video、audio
 - 2D/3D 图形和特效 - 提供更多种演示选项
+    - canvas
 - 性能和集成 - 提供更快的访问速度和性能更好的计算机硬件
+    - 硬件加速
 - 设备访问 - 允许使用各种输入、输出设备
+    - camera
 - 外观 - 可以开发丰富的主题
 
 **参考**
@@ -46,8 +51,10 @@ HTML5 是定义 HTML 标准的最新的版本。 该术语表示两个不同的�
 
 ## Cookie、LocalStorage、SessionStorage
 - Cookie
-- LocalStorage
-- SessionStorage
+    - 生命周期
+- localStorage、sessionStorage
+    - 生命周期
+    - setItem、getItem、removeItem、key
 
 ## script
 `script`标签用于加载js脚本或者立即运行标签之内的js脚本。
@@ -57,7 +64,10 @@ HTML5 是定义 HTML 标准的最新的版本。 该术语表示两个不同的�
 
 ## img
 - `srcset`
-- `sizes`
+- `sizes`、`w`
+
+## 前端分层
+- 结构层、表示层、行为层
 
 **参考**
 - [响应式图片srcset全新释义sizes属性w描述符](http://www.zhangxinxu.com/wordpress/2014/10/responsive-images-srcset-size-w-descriptor/)

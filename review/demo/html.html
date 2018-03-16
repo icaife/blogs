@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML</title>
+</head>
+<body>
+    <h1>img srcset sizes</h1>
+    <img
+        srcset="
+            http://placehold.it/2500 5x,
+            http://placehold.it/1500 3x,
+            http://placehold.it/1000 2x,
+            http://placehold.it/500 1x
+        "
+        src="http://placehold.it/500/abc"
+    />
+    <img
+    srcset="
+        http://placehold.it/2000 2000w,
+        http://placehold.it/1500 1500w,
+        http://placehold.it/1000 1000w,
+        http://placehold.it/500 500w"
+
+    sizes="
+        (max-width: 500px) 500px,
+        (max-width: 1000px) 1000px,
+        (max-width: 1500px) 1500px,
+        2000px"
+    src="http://placehold.it/500/abc"
+    />
+
+</body>
+</html>
