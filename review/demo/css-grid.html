@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Grid</title>
+</head>
+<body>
+    <h1>css grid layout</h1>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .grid {
+            width: 500px;
+            height: 400px;
+            margin: auto;
+            display: grid;
+            border: 1px solid #eee;
+        }
+        
+        .grid-item {
+            border: 1px solid #ddd;
+        }
+    </style>
+
+    <ul class="grid">
+        <li class="grid-item"></li>
+        <li class="grid-item"></li>
+        <li class="grid-item"></li>
+        <li class="grid-item"></li>
+    </ul>
+</body>
+</html>
