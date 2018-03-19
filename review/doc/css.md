@@ -1,5 +1,8 @@
 # CSS
 - 居中：元素居中、文字居中
+    - position: absolute;left: 50%;top: 50%;margin-top: -xxpx;margin-left: -xxpx;
+    - display: flex;align-items: center;align-content: center;justify-content: center;
+    - display: table-cell; vertical-align: middle;
 - Flex、Grid布局
 - 1px 问题
 - Viewport、移动端适配
