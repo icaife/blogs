@@ -16,23 +16,48 @@
         }
 
         .grid {
-            width: 500px;
-            height: 400px;
+            width: 600px;
+            height: 500px;
             margin: auto;
             display: grid;
             border: 1px solid #eee;
+            /* grid-template-columns: [first] 40px [line2] 50px [line3] auto [col4-start] 50px [five] 40px [end];
+            grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line] auto [last-line]; */
+            /* grid-template-columns: 50px 50px auto 50px;
+            grid-template-rows: auto; */
+            grid-template-areas: 
+                "header header header header"
+                "main main . sidebar"
+                "footer footer footer footer";
         }
         
+        .item-a {
+            grid-area: header;
+            background: #aaa;
+        }
+        .item-b {
+            grid-area: main;
+            background: #bbb;
+        }
+        .item-c {
+            grid-area: sidebar;
+            background: #ccc;
+        }
+        .item-d {
+            grid-area: footer;
+            background: #ddd;
+        }
+
         .grid-item {
             border: 1px solid #ddd;
         }
     </style>
 
     <ul class="grid">
-        <li class="grid-item"></li>
-        <li class="grid-item"></li>
-        <li class="grid-item"></li>
-        <li class="grid-item"></li>
+        <li class="item-a"></li>
+        <li class="item-b"></li>
+        <li class="item-c"></li>
+        <li class="item-d"></li>
     </ul>
 </body>
 </html>

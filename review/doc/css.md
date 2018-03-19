@@ -3,8 +3,51 @@
     - position: absolute;left: 50%;top: 50%;margin-top: -xxpx;margin-left: -xxpx;
     - display: flex;align-items: center;align-content: center;justify-content: center;
     - display: table-cell; vertical-align: middle;
+
+- css 选择符 & 优先级
+    - important > inline > #id > .class > tag=伪元素
+    - 通配符选择符 `*`
+    - id选择符 `#`
+    - class选择符 `.`
+    - tag选择符 `tagName`
+    - 属性选择器 [name="leon"]、[name$="leon"]、[name^="leon"]、[name*="leon"]
+    - :nth-of-type 不限制元素，:nth-child限制元素
+    - inline = 1000 , id = 100 , class = 10 , tag = 1
+
+- 盒子模型
+    - 标准：content
+    - IE: content+padding+border
+    - box-sizing: border-box、content-box
+- BFC Block Formating Context
+    - > BFC(Block formatting context)直译为"块级格式化上下文"。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。
+    - Box:
+        - block-level box: list-item table
+        - inline-level box: inline inline-block inline-table
+    -  规则：
+        -  内部box在垂直方向上，一个接一个放置
+        -  浮动元素参与高度计算
+        -  margin不会重叠
+        -  是一个独立的容器，不影响外界的布局。
+        -  BFC区域不会与 float重叠
+        -  每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)
+    - 如何生成：
+        - 根元素 html
+        - float不为none
+        - position不为relative和static
+        - display为inline-block inline-table flex inline-flex
+        - overflow 不为 visible
+
+- 伪元素 伪类区别
+    - > CSS 伪类本质上是为了弥补常规CSS选择器的不足，以便获取到更多信息
+    - 伪类描述状态，a标签的LVHA，:linked、:visited、:hover、active。
+    - 伪元素本质上是创建了一个有内容的虚拟容器，::first-letter、::first-line、::before、::after
+    - 可以同时使用多个伪类，而只能同时使用一个伪元素
+
 - Flex、Grid布局
-- 1px 问题
+    - Flex: flex-direction、align-items、align-content、justify-content、flex-flow，flex= flex-grow flex-shrink flex-basis,flex-flow= flex-direction + flex-wrap
+    - Grid: grid-area、grid-tempalte-areas | grid-template-rows、grid-template-columns
+
+- 1px border 问题:
 - Viewport、移动端适配
 - px em rem vh vw等单位区别
 - 常见布局
