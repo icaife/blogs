@@ -36,6 +36,8 @@
         - position不为relative和static
         - display为inline-block inline-table flex inline-flex
         - overflow 不为 visible
+    - 参考
+        - [前端精选文摘：BFC 神奇背后的原理](http://www.cnblogs.com/lhb25/p/inside-block-formatting-ontext.html)
 
 - 伪元素 伪类区别
     - > CSS 伪类本质上是为了弥补常规CSS选择器的不足，以便获取到更多信息
