@@ -115,6 +115,9 @@
 - 文档流
     - 普通流  normal flow
 - px em rem vh vw等单位区别
+    - px 像素
+    - em 当前对象内文本的尺寸 
+    - rem root em -> html font-size
 - 常见布局
 - 动画
 - 规范：命名方式、模块化
@@ -145,3 +148,17 @@
     - css界的babel
     - 解析器解析 css 语法树 -> plugin system -> stirngifier -> css
     - 参考: [PostCSS是个什么鬼东西？](http://www.60sky.com/post/postcss-introduce.html)
+
+- 文本溢出
+    - 单行: overflow: hidden; text-overflow: ellipsis; 
+    - 多行: :after content: '...' :before content: '' position: absolute; 或者 display: -webkit-box;-webkit-line-clamp: 3;text-overflow: ellipsis;
+
+- 单行文本居中 & 多行文本居中
+    - table display: table table-cell
+    - padding
+    - line-height
+    - flex
+
+- 流式布局与响应式布局的区别
+    - 流式布局: 使用非固定像素来定义网页内容，也就是百分比布局，通过盒子的宽度设置成百分比来根据屏幕的宽度来进行伸缩，不受固定像素的限制，内容向两侧填充。
+    - 响应式开发: 利用CSS3 中的 Media Query(媒介查询)，通过查询 screen 的宽度来指定某个宽度区间的网页布局
