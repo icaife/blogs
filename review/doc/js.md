@@ -8,6 +8,30 @@
     - cloneNode() cloneNode(true)
     - document.documentElement.scrollTop || document.body.scrollTop
 
+- 基础
+    - 数据类型
+        - 基础数据类型：null undefined number string boolean
+        - 引用数据类型：object array function
+    - 字符串、数组常用操作
+    - 作用域
+        - 函数内部可以访问的变量区域，function作为作用域
+        - 活动对象 activation object -> 全局变量  global object
+    - 闭包
+        - 可以访问函数内变量的一块区域，常驻内存中
+        - 防止变量污染，模块化
+    - 原型
+- 性能优化
+    - 重绘 && 回流：
+        - 重绘： 当背景色等不会引起页面布局变化，只需要重新渲染的过程叫重绘。
+        - 回流：当render树的一部分或者因为边距等问题发生改变需要重建的过程。
+        - 重绘不一定回流，回流一定会重绘。
+        - display: none 影响了结构，回流； visibility: hidden 不影响结构 重绘
+    - 优化点：
+        - 多次操作dom，display:none，完成后block
+        - 创建多个结点，document.createFragment 创建后一次性append到结点
+        - 避免使用table布局
+        - 避免使用css表达式
+        - 批量修改样式，className 、 cssText 
 
 - 库 && 框架
     - 参考
