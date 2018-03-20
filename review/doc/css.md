@@ -45,22 +45,103 @@
     - 伪元素本质上是创建了一个有内容的虚拟容器，::first-letter、::first-line、::before、::after
     - 可以同时使用多个伪类，而只能同时使用一个伪元素
 
+- CSS3 新特性
+    - CSS3 选择器
+        - nth-of-type nth child ...
+        - :checked :disabled :empty
+        - ::selection
+
+    - 边框和颜色
+        - RGBA
+        - border-radius
+        - border-image
+    - 渐变 gradient
+        - linear 线性渐变  
+        - radial 径向渐变
+    - 阴影
+        - box-shadow
+    - 盒子模型 box-sizing
+        - content-box
+        - border-box
+    - 动画
+        - transform: rotate scale skew translate matrix, transform-origin
+            - transition: property duration animation-type delay
+        - transition: wdith、opacity、color......
+        - animation: name duration timing-function delay interation-count direction
+            - keyframes
+            - from to
+            - percentage
+
+    - css3 硬件加速
+        - translate3d 
+        - 可能的问题：元素抖动闪烁
+    - 参考
+        - [深入了解CSS3新特性](https://www.ibm.com/developerworks/cn/web/1202_zhouxiang_css3/)
+
 - Flex、Grid布局
     - Flex: flex-direction、align-items、align-content、justify-content、flex-flow，flex= flex-grow flex-shrink flex-basis,flex-flow= flex-direction + flex-wrap
     - Grid: grid-area、grid-tempalte-areas | grid-template-rows、grid-template-columns
 
+- CSS 兼容性问题
+    - IE hack: ie7: `*` `+` ie89:`\0` ie678:`\9` ie6:`_`
+    - writing-mode firefox
+    - autoprefixer  -webkit- -o- -ms- -moz-
+
 - 1px border 问题:
+    - media query  -webkit-min-device-pixel-ratio 1px 0.5 px 0.333px
+    - border image
+    - 参考
+        - https://www.cnblogs.com/lunarorbitx/p/5287309.html
+
 - Viewport、移动端适配
+    - ideal viewport 理想视口  dip 设备逻辑像素
+    - meta viewport width 640
+    - css3 media query
+    - meta viewport rem
+    - vw vh
+- 清除浮动 -> 闭合浮动，减少浮动带来的影响：诸如高度塌陷，元素重叠等。
+    - clearfix  
+            
+            .clearfix:after{content:'.';display:block;height:0;clear:both;visibility:hidden}
+    - hasLayout BFC 
+        - *zoom:1;
+        - position: absolute | fixed
+        - overflow: hidden
+        - display: inline-block table-cell ...
+    - 标签清除： `<br>`
+    - 参考
+        - http://www.iyunlu.com/demo/enclosing-float-and-clearing-float/index.html
+
+- 文档流
+    - 普通流  normal flow
 - px em rem vh vw等单位区别
 - 常见布局
 - 动画
 - 规范：命名方式、模块化
+    - BEM 命名
+    - id限制
+    - 嵌套限制
+    - 常用命名： header footer 
+    - 全局样式
+    - 功能分块
+        - logo login registe shop status btn tab 
+    - 整体结构: reset.css common.css color.css font.css form.css ...
 - LESS
 - reset normalize
+    - reset 清空重置 片甲不留
+    - normalize 抹平浏览器差异，存在即合理
 - 选择器
 - 性能优化
 - 文档流、清除浮动
-- BFC
 - 继承
+    - 可继承： color font-size cursor text-align ...
+    - 不可继承：width  border display vertical-align background ...
 - 权重计算
-- position: static relative absolute fixed
+    - important = 1000
+    - id = 100
+    - class = 10
+    - tag = 1
+- postcss 原理
+    - css界的babel
+    - 解析器解析 css 语法树 -> plugin system -> stirngifier -> css
+    - 参考: [PostCSS是个什么鬼东西？](http://www.60sky.com/post/postcss-introduce.html)
