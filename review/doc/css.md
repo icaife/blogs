@@ -3,6 +3,7 @@
     - position: absolute;left: 50%;top: 50%;margin-top: -xxpx;margin-left: -xxpx;
     - display: flex;align-items: center;align-content: center;justify-content: center;
     - display: table-cell; vertical-align: middle;
+    - 图片、文字居中 vertical-align: middle;
 
 - css 选择符 & 优先级
     - important > inline > #id > .class > tag=伪元素
@@ -161,4 +162,23 @@
 
 - 流式布局与响应式布局的区别
     - 流式布局: 使用非固定像素来定义网页内容，也就是百分比布局，通过盒子的宽度设置成百分比来根据屏幕的宽度来进行伸缩，不受固定像素的限制，内容向两侧填充。
-    - 响应式开发: 利用CSS3 中的 Media Query(媒介查询)，通过查询 screen 的宽度来指定某个宽度区间的网页布局
+    - 响应式开发: 利用CSS3 中的 Media Query(媒介查询)，通过查询 screen 的宽度来指定某个宽度区间的网页布局。
+
+- input[type="search"]
+    - -webkit-appearance: none
+
+- line-height
+    - 行高，可以撑开容器。
+    - 单位：px em number %
+    - px em : px 固定值 em 父元素 font-size计算行高
+    - 数字：元素本身font-size * number -> 12px * 1.5 = 18px
+    - %: 父元素 font-size * % -> 12px * 150% = 18px
+
+- 性能优化
+    - css文件合并
+    - 避免嵌套过深、命名过长
+    - 提取公共样式，减少代码量
+    - css sprite
+
+- 参考
+    - https://github.com/poetries/FE-Interview-Questions/blob/master/CSS.md

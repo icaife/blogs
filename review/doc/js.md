@@ -10,8 +10,8 @@
 
 - 基础
     - 数据类型
-        - 基础数据类型：null undefined number string boolean
-        - 引用数据类型：object array function
+        - 基础数据类型：null undefined number string boolean，保存在栈内存中的简单数据段。Undefined, Null,Boolean,Number和String，在内存中分别占有固定大小的空间，一般称它们按值访问。
+        - 引用数据类型：object array function，保存在堆内存中的对象。
     - 字符串、数组常用操作
     - 作用域
         - 函数内部可以访问的变量区域，function作为作用域
@@ -20,19 +20,28 @@
         - 可以访问函数内变量的一块区域，常驻内存中
         - 防止变量污染，模块化
     - 原型
-- 性能优化
-    - 重绘 && 回流：
-        - 重绘： 当背景色等不会引起页面布局变化，只需要重新渲染的过程叫重绘。
-        - 回流：当render树的一部分或者因为边距等问题发生改变需要重建的过程。
-        - 重绘不一定回流，回流一定会重绘。
-        - display: none 影响了结构，回流； visibility: hidden 不影响结构 重绘
-    - 优化点：
-        - 多次操作dom，display:none，完成后block
-        - 创建多个结点，document.createFragment 创建后一次性append到结点
-        - 避免使用table布局
-        - 避免使用css表达式
-        - 批量修改样式，className 、 cssText 
-
+        - 万物皆对象，普通对象、函数对象
+        - 原型对象 函数 -> prototype ， 对象 -> __proto__ -> constructor 构造器的原型
+    - 原型链
+        - 访问属性的路径，自有属性 -> __proto__.prototype
+- 重绘 && 回流：
+    - 重绘： 当背景色等不会引起页面布局变化，只需要重新渲染的过程叫重绘。
+    - 回流：当render树的一部分或者因为边距等问题发生改变需要重建的过程。
+    - 重绘不一定回流，回流一定会重绘。
+    - display: none 影响了结构，回流； visibility: hidden 不影响结构 重绘
+- 优化点：
+    - 多次操作dom，display:none，完成后block
+    - 创建多个结点，document.createFragment 创建后一次性append到结点
+    - 避免使用table布局
+    - 避免使用css表达式
+    - 批量修改样式，className 、 cssText 
+    - 脱离文档流 position: absolute
+    - 取值 缓存到变量
+- 模块化
+    - CMD 懒加载  AMD 提前加载
+    - require/exports 运行时加载执行 动态
+    - import/export 静态分析，加载模块变量， 
+    - 
 - 库 && 框架
     - 参考
         - [Vue与React两个框架的区别和优势对比](http://caibaojian.com/vue-vs-react.html)
