@@ -114,13 +114,114 @@
     - generator
         - https://www.cnblogs.com/diligenceday/p/5488037.html#_label0
 
-- 库存 && 框架
-    - angular
-    - react
-    - vue
+- 浅拷贝 && 深拷贝
+    - 浅拷贝：因为浅复制只会将对象的各个属性进行依次复制，并不会进行递归复制，引用类型只复制了一地址。
+    - 深拷贝：
 
-- 库 && 框架
-    - 参考
-        - [Vue与React两个框架的区别和优势对比](http://caibaojian.com/vue-vs-react.html)
-        - [JS实现继承的几种方式](https://www.cnblogs.com/humin/p/4556820.html)
-        - [lodash源码学习debounce,throttle](https://www.cnblogs.com/wandiao/p/7223269.html)
+- "use strict"
+    - 变量必须先声明后调用
+    - 禁止使用 arguments.callee arguments.caller
+    - 不能使用with语句
+    - 不能删除delete变量
+
+- 函数柯里化
+    - 把接受多个参数的函数变换成接受一个单一参数，bind
+
+- 内存泄漏
+    - dom移除事件未移除
+    - 闭包
+    - 循环引用
+
+- js垃圾回收机制
+    - 标记清除: 进入环境，标记使用，离开环境，标记清除
+    - 引用计数：跟踪每个变量被引用的次数
+
+- 双向绑定
+    - 发布-订阅者模式
+    - 脏检查模式
+    - 数据劫持: 发布订阅 + Object.defineProperty
+
+- Virtual DOM
+    - 改变真实的DOM状态远比改变一个JavaScript对象的花销要大得多。
+    - 将DOM树放在内存中，状态变更的时候通过`diff(O(n^3))`算法，对同一层级的元素进行对比。
+    - diff算法：深度优先遍历，记录差异。
+
+- 框架
+    - Vue
+        - 模版语法
+        - 语法简单、上手容易
+        - 与现有系统融合、迁移成本较低
+        - Vue.nextTick
+        - 生命周期
+            - beforeCreate -> created   挂载dom
+            - beforeMount -> mounted    挂载数据
+            - beforeUpdate -> updated   data变化
+            - destoryed                 解除事件监听、双向绑定解除
+        - Vue.directive
+            - inserted bind update unbind
+        - vuex: 全局状态管理，比如登录状态、购物车、组件状态等
+        - Object.defineProperty
+            - 生成getter setter，监听数据变化
+            - compile 模板指令，生成vm
+            - Watcher Observer Compile
+    - React
+        - JSX 语法
+        - 生命周期  
+
+                componentWillMount：组件挂载之前执行，只执行一次
+
+                componentDidMount: 组件渲染完成，只执行一次
+
+                =======================================================
+
+                componentWillRecevieProps: 组件将要接收新的props执行
+
+                shouldComponentUpdate: 判断组件是否应该重新渲染，默认是true
+
+                componentWillUpdate: 组件将要重新渲染
+
+                componentDidUpdate: 组件重新渲染完成
+
+                =======================================================
+
+                componentWillUnmount: 卸载组件
+
+    - 组件化
+        - 应用拆分不同模块，每个模块通过合适的方式（事件）相互联系
+
+    - 状态管理
+        - 
+
+- js事件循环 event-loop
+    - 消息队列：异步操作回调函数放入事件循环队列当中
+    - 事件循环
+
+- fetch
+    - promise、async await
+    - 语法简洁
+    - 默认不带cookie，{credentials: 'include'}
+    - 不能中断
+
+- ES6新特性
+    - Default Parameters（默认参数） in ES6
+    - Template Literals （模板文本）in ES6
+    - Multi-line Strings （多行字符串）in ES6
+    - Destructuring Assignment （解构赋值）in ES6
+    - Enhanced Object Literals （增强的对象文本）in ES6
+    - Arrow Functions （箭头函数）in ES6
+    - Promises in ES6
+    - Block-Scoped Constructs Let and Const（块作用域构造Let and Const）
+    - Classes（类） in ES6
+    - Modules（模块） in ES6
+
+
+
+- 参考
+    - [Vue与React两个框架的区别和优势对比](http://caibaojian.com/vue-vs-react.html)
+    - [JS实现继承的几种方式](https://www.cnblogs.com/humin/p/4556820.html)
+    - [lodash源码学习debounce,throttle](https://www.cnblogs.com/wandiao/p/7223269.html)
+    - [30 seconds of code](https://github.com/kujian/30-seconds-of-code)
+    - [深度剖析：如何实现一个 Virtual DOM 算法](https://github.com/livoras/blog/issues/13)
+    - [浏览器的工作原理：新式网络浏览器幕后揭秘](https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/)
+    - [React 常用面试题目与分析](https://zhuanlan.zhihu.com/p/24856035)
+    - [JavaScript 运行机制详解：再谈Event Loop](http://www.ruanyifeng.com/blog/2014/10/event-loop.html)
