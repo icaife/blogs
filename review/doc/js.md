@@ -225,3 +225,4 @@
     - [浏览器的工作原理：新式网络浏览器幕后揭秘](https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/)
     - [React 常用面试题目与分析](https://zhuanlan.zhihu.com/p/24856035)
     - [JavaScript 运行机制详解：再谈Event Loop](http://www.ruanyifeng.com/blog/2014/10/event-loop.html)
+    - [Vue2.0源码阅读笔记--双向绑定实现原理](http://www.cnblogs.com/wj204/p/6423478.html)
