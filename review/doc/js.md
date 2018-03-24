@@ -124,9 +124,6 @@
     - 不能使用with语句
     - 不能删除delete变量
 
-- 函数柯里化
-    - 把接受多个参数的函数变换成接受一个单一参数，bind
-
 - 内存泄漏
     - dom移除事件未移除
     - 闭包
@@ -166,24 +163,17 @@
             - Watcher Observer Compile
     - React
         - JSX 语法
-        - 生命周期  
+        - 单项数据流
+        - 生命周期 
 
                 componentWillMount：组件挂载之前执行，只执行一次
-
                 componentDidMount: 组件渲染完成，只执行一次
-
                 =======================================================
-
                 componentWillRecevieProps: 组件将要接收新的props执行
-
                 shouldComponentUpdate: 判断组件是否应该重新渲染，默认是true
-
                 componentWillUpdate: 组件将要重新渲染
-
                 componentDidUpdate: 组件重新渲染完成
-
                 =======================================================
-
                 componentWillUnmount: 卸载组件
 
     - 组件化
@@ -214,7 +204,30 @@
     - Classes（类） in ES6
     - Modules（模块） in ES6
 
+- 函数式编程
+    - 纯函数的定义是，对于相同的输入，永远会得到相同的输出，而且没有任何可观察的副作用(不改变原有数据‘’)，也`不依赖外部环境的状态`，每一步都是单纯的运算，而且都有返回值。
+    - Array.slice是纯函数，不改变原有数据，Array.splice不是纯函数，因为改变了原有数据。
 
+- 高阶函数 high order function
+    - JavaScript的函数其实都指向某个变量。既然变量可以指向函数，函数的参数能接收变量，那么一个函数就可以接收另一个函数作为参数，这种函数就称之为高阶函数
+
+- 函数柯里化
+    - 传递给函数一部分参数来调用它，让它返回一个函数去处理剩下的参数。
+
+            es5:
+            
+            function add(x) {
+                return function(y) {
+                    x + y;
+                };
+            }
+
+            es6:
+            var add = x => (y => x + y);
+
+    - 事实上柯里化是一种“预加载”函数的方法，通过传递较少的参数，得到一个已经记住了这些参数的新函数，某种意义上讲，这是一种对参数的“缓存”，是一种非常高效的编写函数的方法。
+- WebAsemmbly
+- 模板引擎
 
 - 参考
     - [Vue与React两个框架的区别和优势对比](http://caibaojian.com/vue-vs-react.html)
@@ -226,3 +239,5 @@
     - [React 常用面试题目与分析](https://zhuanlan.zhihu.com/p/24856035)
     - [JavaScript 运行机制详解：再谈Event Loop](http://www.ruanyifeng.com/blog/2014/10/event-loop.html)
     - [Vue2.0源码阅读笔记--双向绑定实现原理](http://www.cnblogs.com/wj204/p/6423478.html)
+    - [JavaScript函数式编程（一）](https://zhuanlan.zhihu.com/p/21714695)
+    - [函数式编程初探](http://www.ruanyifeng.com/blog/2012/04/functional_programming.html)

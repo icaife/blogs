@@ -8,6 +8,5 @@
         - etag: 资源的唯一标识
         - if-none-match: etag如果不匹配，则重新请求，如果匹配，则命中缓存。
 
-
 - 参考
     - https://www.cnblogs.com/shixiaomiao1122/p/7591556.html
