@@ -228,6 +228,15 @@
     - 事实上柯里化是一种“预加载”函数的方法，通过传递较少的参数，得到一个已经记住了这些参数的新函数，某种意义上讲，这是一种对参数的“缓存”，是一种非常高效的编写函数的方法。
 - WebAsemmbly
 - 模板引擎
+- Babel
+    - 作用：很多浏览器目前还不支持ES6的代码，但是我们可以通过Babel将ES6的代码转译成ES5代码，让所有的浏览器都能理解的代码，这就是Babel的作用。
+    - 抽象语法树 Abstract Syntas Tree AST：源代码的抽象语法结构的树状表现形式。
+    - 流程：
+        - 解析 PARSE (解析得到 AST) -> 转换 TRANSFORM (插件进行遍历转义) -> 生成 GENERATE (得到新的AST语法树后生成es5代码)
+        <img src="https://images2017.cnblogs.com/blog/561794/201711/561794-20171120013201211-2132813361.png">
+    - babel只转换最新语法，最新的API不支持。
+        - polyfill: core-js + renenetator runtime ，可能污染全局变量。
+        - runtime: 
 
 - 参考
     - [Vue与React两个框架的区别和优势对比](http://caibaojian.com/vue-vs-react.html)
