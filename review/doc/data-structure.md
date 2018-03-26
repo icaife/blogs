@@ -26,7 +26,28 @@
         }
 
 ## 链表
+- 单向链表
 
+        function Node(value) {
+            this.value = value;
+            this.next = null;
+        }
+
+        function LinkedList () {
+            this.head = new Node("head");
+        }
+
+        Object.assign(LinkedList.prototype, {
+            find() {},
+            insert() {},
+            remove() {},
+            next() {},
+            previous() {}
+        });
+
+- 双向链表
+
+    
 ## 堆栈
 
 ## 树
