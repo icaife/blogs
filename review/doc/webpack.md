@@ -15,10 +15,31 @@
         - 可options配置
         - 可产生额外的任意文
     - callback asyncCallback
+
+    ```
+    module.exports = source => {
+        return sourceHandler(source);
+    };
+    ```
+
 - Plugin
     - apply挂载插件
     - compiler.plugin 挂载webpack事件钩子: compilation 、make
         - compilation.plugin 挂载事件钩子: build-module, optimize-chunk-assets
+
+        ```
+        class UglifyJsPlugin {
+            apply(compiler) {
+                const options = this.options;
+
+                options.test = options.test || /\.js($|\?)/i;
+
+                compiler.plugin("compilation", compilation => {
+                    compilation.plugin("");
+                });
+            }
+        }
+        ```
 
 - Tapable 发布、订阅事件
 
@@ -40,6 +61,8 @@
 
 - hot-reload
     - EventSource
+
+<img src="https://img.alicdn.com/tps/TB1GVGFNXXXXXaTapXXXXXXXXXX-4436-4244.jpg" alt="webpack-flow">
 
 - 参考
     - [前端面试之webpack篇](https://juejin.im/post/59cb6307f265da064e1f65b9#heading-5)
