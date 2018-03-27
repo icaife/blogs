@@ -8,7 +8,12 @@
     - 转换文件，添加到依赖视图当中
     - babel-loader、css-loader、style-loader等
     - 使用loaderUtil.getOptions
-    - 链式调用，从右往左
+    - 特性
+        - 链式调用
+        - 可以是同步函数或异步函数
+        - 可接收查询参数
+        - 可options配置
+        - 可产生额外的任意文
     - callback asyncCallback
 - Plugin
     - apply挂载插件
