@@ -1,7 +1,7 @@
 ## 目录
-- [html](./html)
-- [css](./css)
-- [js](./js)
+- [html](./html.md)
+- [css](./css.md)
+- [js](./js.md)
 
 
 ### 参考
