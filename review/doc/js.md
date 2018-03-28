@@ -272,3 +272,5 @@
 - [JavaScript函数式编程（一）](https://zhuanlan.zhihu.com/p/21714695)
 - [函数式编程初探](http://www.ruanyifeng.com/blog/2012/04/functional_programming.html)
 - [深入Promise](https://zhuanlan.zhihu.com/p/25178630)
+- [性感的Promise，拥抱ta然后扒光ta](https://juejin.im/post/5ab20c58f265da23a228fe0f)
+- [Vue diff 算法](https://github.com/aooy/blog/issues/2)
