@@ -275,3 +275,4 @@
 - [性感的Promise，拥抱ta然后扒光ta](https://juejin.im/post/5ab20c58f265da23a228fe0f)
 - [Vue diff 算法](https://github.com/aooy/blog/issues/2)
 - [如何构建一个微型的CMD模块化加载器](http://natumsol.github.io/2015/12/21/a-mirco-cmd-loader/)
+- [Promise 小书](http://liubin.org/promises-book/)
