@@ -276,3 +276,4 @@
 - [Vue diff 算法](https://github.com/aooy/blog/issues/2)
 - [如何构建一个微型的CMD模块化加载器](http://natumsol.github.io/2015/12/21/a-mirco-cmd-loader/)
 - [Promise 小书](http://liubin.org/promises-book/)
+- [2018 前端性能检查表](https://juejin.im/post/5ac1d117f265da2396128b9f)

@@ -15,11 +15,14 @@
 		window.Promise = factory();
 	}
 })(this, () => {
+	/**
+	 * 三种状态，pending 可以变成任何状态
+	 */
 	const PENDING = "pending",
 		FULFILLED = "fulfilled",
 		REJECTED = "rejected";
 
-	/**
+	/**构造函数
 	 * @param {Function} executor
 	 */
 	function Promise(executor) {
@@ -35,6 +38,7 @@
 		self.onResolvedCallbacks = [];
 		self.onRejectedCallbacks = [];
 
+		//挂载方法
 		self.then = then.bind(self);
 		self.resolve = resolve.bind(self);
 		self.reject = reject.bind(self);
@@ -46,10 +50,6 @@
 			self.reject(error);
 		}
 	}
-
-	// Promise.prototype.then = then;
-	// Promise.prototype.resolve = resolve;
-	// Promise.prototype.reject = reject;
 
 	/**
 	 *
@@ -70,6 +70,7 @@
 						throw error;
 				  };
 
+		//pending
 		if (self.status === PENDING) {
 			promise2 = new Promise((resolve, reject) => {
 				self.onResolvedCallbacks.push(() => {
@@ -98,14 +99,14 @@
 			promise2 = new Promise((resolve, reject) => {
 				delay(() => {
 					try {
-						let x = onFulfilled(promise2, x, resolve, reject);
+						let x = onFulfilled(self.value);
 						resolvePromise(promise2, x, resolve, reject);
 					} catch (error) {
 						reject(error);
 					}
 				});
 			});
-		} else {
+		} else if (self.status === REJECTED) {
 			promise2 = new Promise((resolve, reject) => {
 				delay(() => {
 					try {
@@ -137,6 +138,7 @@
 	}
 
 	function resolvePromise(promise2, x, resolve, reject) {
+		//如果promise 和 x 指向相同的值, 使用 TypeError做为原因将promise拒绝。
 		if (promise2 === x) {
 			return reject(new Error("循环引用"));
 		}
@@ -147,6 +149,7 @@
 			try {
 				let then = x.then;
 
+				//如果是 Promise
 				if (typeof then === "function") {
 					then.call(
 						x,
@@ -170,6 +173,7 @@
 						}
 					);
 				} else {
+					console.log("普通值");
 					resolve(x);
 				}
 			} catch (error) {
@@ -187,16 +191,16 @@
 		}
 	}
 
-	function reject(value) {
+	function reject(reason) {
 		let self = this;
 
 		delay(() => {
 			if (self.status === PENDING) {
 				self.status = FULFILLED;
-				self.value = value;
+				self.reason = reason;
 
 				self.onResolvedCallbacks.forEach(onFulfilled => {
-					onFulfilled(value);
+					onFulfilled(reason);
 				});
 			}
 		});
@@ -222,13 +226,21 @@ var p1 = new Promise((resolve, reject) => {
 
 var p2 = new Promise((resolve, reject) => {
 	setTimeout(() => {
-		resolve({ b: 1 });
+		resolve(p2);
 	}, 1000);
 });
 
-p2.then(
+var p3 = new Promise((resolve, reject) => {
+	setTimeout(() => {
+		reject({ c: 1 });
+	}, 1000);
+});
+
+p3.then(
 	data => {
 		console.log(data);
 	},
-	() => {}
+	reason => {
+		console.log("reason->", reason);
+	}
 );
