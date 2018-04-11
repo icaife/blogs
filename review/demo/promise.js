@@ -77,6 +77,7 @@
 					delay(() => {
 						try {
 							let x = onFulfilled(self.value); // 拿到返回值
+							console.log("pending->", x);
 							resolvePromise(promise2, x, resolve, reject);
 						} catch (error) {
 							reject(error);
@@ -100,6 +101,7 @@
 				delay(() => {
 					try {
 						let x = onFulfilled(self.value);
+						console.log("fulilled->", x);
 						resolvePromise(promise2, x, resolve, reject);
 					} catch (error) {
 						reject(error);
@@ -111,6 +113,7 @@
 				delay(() => {
 					try {
 						let x = onRejected(self.reason);
+						console.log("rejected->", x);
 						resolvePromise(promise2, x, resolve, reject);
 					} catch (error) {
 						reject(error);
@@ -173,7 +176,6 @@
 						}
 					);
 				} else {
-					console.log("普通值");
 					resolve(x);
 				}
 			} catch (error) {
@@ -187,6 +189,7 @@
 			}
 		} else {
 			//普通值
+			console.log("普通值");
 			resolve(x);
 		}
 	}
@@ -219,20 +222,17 @@
 
 //promise tests
 var p1 = new Promise((resolve, reject) => {
-	setTimeout(() => {
-		resolve(p2);
-	}, 1000);
+	// resolve(p2);
+	return p2;
 });
 
 var p2 = new Promise((resolve, reject) => {
-	setTimeout(() => {
-		resolve(p2);
-	}, 1000);
+	return p3;
 });
 
 var p3 = new Promise((resolve, reject) => {
 	setTimeout(() => {
-		reject({ c: 1 });
+		resolve({ c: 1 });
 	}, 1000);
 });
 
